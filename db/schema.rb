@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2022_06_16_122700) do
 
-  create_table "answers", charset: "utf8", force: :cascade do |t|
+  create_table "answers", charset: "latin1", force: :cascade do |t|
     t.string "answer_content"
     t.boolean "correct_flag"
     t.bigint "question_id"
@@ -21,13 +21,13 @@ ActiveRecord::Schema.define(version: 2022_06_16_122700) do
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
-  create_table "parent_questions", charset: "utf8", force: :cascade do |t|
+  create_table "parent_questions", charset: "latin1", force: :cascade do |t|
     t.string "parent_content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "questions", charset: "utf8", force: :cascade do |t|
+  create_table "questions", charset: "latin1", force: :cascade do |t|
     t.string "question_content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2022_06_16_122700) do
     t.index ["parent_questions_id"], name: "index_questions_on_parent_questions_id"
   end
 
-  create_table "user_answers", charset: "utf8", force: :cascade do |t|
+  create_table "user_answers", charset: "latin1", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "answer_id"
     t.datetime "created_at", precision: 6, null: false
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2022_06_16_122700) do
     t.index ["user_id"], name: "index_user_answers_on_user_id"
   end
 
-  create_table "users", charset: "utf8", force: :cascade do |t|
+  create_table "users", charset: "latin1", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
