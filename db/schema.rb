@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_16_122700) do
+ActiveRecord::Schema.define(version: 2022_07_28_175547) do
 
   create_table "answers", charset: "latin1", force: :cascade do |t|
     t.string "answer_content"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2022_06_16_122700) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "is_sent_email", default: false
   end
 
   add_foreign_key "questions", "parent_questions", column: "parent_questions_id"
